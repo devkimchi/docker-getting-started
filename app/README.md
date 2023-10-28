@@ -11,7 +11,8 @@ docker build -t getting-started-v1 . -f Dockerfile
 
 ```
 docker images
- getting-started-v1                            latest      8c8ed18feea7   5 seconds ago    324MB
+REPOSITORY                                   TAG         IMAGE ID       CREATED          SIZE
+getting-started-v1                           latest      f68fce1f3fbf   5 seconds ago    1.24GB
 ```
 
 ## Building the Image with Multi-Stage Build
