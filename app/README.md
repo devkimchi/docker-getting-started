@@ -18,16 +18,26 @@ getting-started-v1                           latest      f68fce1f3fbf   5 second
 ## Building the Image with Multi-Stage Build
 
 ```
- docker build -t getting-started-v2 . -f Dockerfile.multi
+ docker build -t getting-started-v1_1 . -f Dockerfile1.multi
 ```
 
 ## Result:
 
 ```
- docker images
+docker images
 REPOSITORY                                   TAG         IMAGE ID       CREATED          SIZE
-getting-started-v2                           latest      7b3d14a1ad95   7 seconds ago    201MB
+getting-started-v1_1                         latest      c3cf2766c545   4 seconds ago    1.12GB
 ```
 
 ## Building the Image with Multi-Stage Build with Slimmer Version
+
+```
+ docker build -t getting-started-v1_2 . -f Dockerfile2.multi
+```
+
+```
+docker images
+REPOSITORY
+getting-started-v1_2                         latest      5ddbab822611   16 seconds ago   288MB
+```
 
