@@ -41,3 +41,65 @@ REPOSITORY
 getting-started-v1_2                         latest      5ddbab822611   16 seconds ago   288MB
 ```
 
+## Demo 2: Using MySQL
+
+```
+ docker compose up -d
+```
+
+```
+ sh-4.4# mysql -uroot -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.35 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show tables;
+ERROR 1046 (3D000): No database selected
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| todos              |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> show tables from todos;
++-----------------+
+| Tables_in_todos |
++-----------------+
+| todo_items      |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql>  select * from todo_items;
+ERROR 1046 (3D000): No database selected
+mysql> use todos
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> use todos;
+Database changed
+mysql>  select * from todo_items;
++--------------------------------------+---------------+-----------+
+| id                                   | name          | completed |
++--------------------------------------+---------------+-----------+
+| c7a13f20-b096-4fb7-a499-0b8c17c12808 | Watch Netflix |         0 |
++--------------------------------------+---------------+-----------+
+1 row in set (0.00 sec)
+
+mysql>
+```
