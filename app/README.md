@@ -1,4 +1,4 @@
-## Dockerfile Vs Multi-Stage Build
+## Demo 1: Dockerfile Vs Multi-Stage Build
 
 
 ## Building the Image
@@ -41,7 +41,9 @@ REPOSITORY
 getting-started-v1_2                         latest      5ddbab822611   16 seconds ago   288MB
 ```
 
-## Demo 2: Using MySQL
+
+
+## Demo 2: Multi-Container app - Using MySQL
 
 ```
  docker compose up -d
@@ -104,7 +106,21 @@ mysql>  select * from todo_items;
 mysql>
 ```
 
-## Demo 3 - Demonstrating Compose Include
+## Demo 3: Using Healthcheck
+
+```
+ docker build -t getting_started_v1_3 . -f Dockerfile.healthcheck
+```
+
+```
+docker ps
+CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS                             PORTS                    NAMES
+2151c8a3ae01   getting-started-v1_3   "docker-entrypoint.s…"   31 seconds ago   Up 31 seconds (health: starting)   0.0.0.0:3000->3000/tcp   sad_hodgkin
+```
+
+
+
+## Demo 4 - Demonstrating Compose Include
 
 
 ```
