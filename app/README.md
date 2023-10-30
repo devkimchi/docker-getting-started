@@ -104,9 +104,10 @@ mysql>  select * from todo_items;
 mysql>
 ```
 
-## Demonstrating Compose Include
+## Demo 3 - Demonstrating Compose Include
 
 
 ```
- docker compose -f web.yml up
+docker compose down
+docker compose -f web.yml up
 ```
