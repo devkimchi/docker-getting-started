@@ -1,10 +1,9 @@
 ## Demo 1: Dockerfile Vs Multi-Stage Build
 
-
 ## Building the Image
 
 ```
-docker build -t getting-started-v1 . -f Dockerfile
+docker build -t getting-started-v1 . -f Dockerfile.base
 ```
 
 ## Result:
@@ -40,8 +39,6 @@ docker images
 REPOSITORY
 getting-started-v1_2                         latest      5ddbab822611   16 seconds ago   288MB
 ```
-
-
 
 ## Demo 2: Multi-Container app - Using MySQL
 
@@ -118,12 +115,13 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED          
 2151c8a3ae01   getting-started-v1_3   "docker-entrypoint.s…"   31 seconds ago   Up 31 seconds (health: starting)   0.0.0.0:3000->3000/tcp   sad_hodgkin
 ```
 
-
-
 ## Demo 4 - Demonstrating Compose Include
-
 
 ```
 docker compose down
 docker compose -f web.yml up
 ```
+
+## Demo 5 - DevContainers
+
+![Open in DevContainer](../images/open-devcontainer.png)
